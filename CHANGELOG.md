@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Implement DUP scalability correctly by distributing multiple deployments and managing queue
   allocation over different replicas.
+- Update Operator SDK from v1.4.2 to v1.5.0.
 
 ## [1.0.0] - 2021-07-01
 ### Changed
