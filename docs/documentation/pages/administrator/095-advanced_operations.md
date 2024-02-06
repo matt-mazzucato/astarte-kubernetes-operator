@@ -26,7 +26,6 @@ database even when Astarte is deleted from your cluster.
 
 To restore your Astarte instance all you have to do is saving the following resources:
 + Astarte CR;
-+ AstarteVoyagerIngress CR (if deployed);
 + AstarteDefaultIngress CR (if deployed);
 + CA certificate and key;
 
@@ -34,7 +33,6 @@ and, assuming that the name of your Astarte is `astarte` and that it is deployed
 `astarte` namespace, it can be done simply executing the following commands:
 ```bash
 kubectl get astarte -n astarte -o yaml > astarte-backup.yaml
-kubectl get avi -n astarte -o yaml > avi-backup.yaml
 kubectl get adi -n astarte -o yaml > adi-backup.yaml
 kubectl get secret astarte-devices-ca -n astarte -o yaml > astarte-devices-ca-backup.yaml
 ```
@@ -51,13 +49,7 @@ kubectl apply -f astarte-devices-ca-backup.yaml
 kubectl apply -f astarte-backup.yaml
 ```
 
-And when your Astarte resource is ready, to restore your AstarteVoyagerIngress:
-
-```bash
-kubectl apply -f avi-backup.yaml
-```
-
-while to restore your AstarteDefaultIngress resource:
+And when your Astarte resource is ready, to restore your AstarteDefaultIngress resource:
 
 ```bash
 kubectl apply -f adi-backup.yaml
@@ -94,7 +86,7 @@ The Operator's installation procedure marks all the Astarte CRDs as owned by the
 Therefore, when the Operator is uninstalled all the CRDs are seen as orphaned and the Kubernetes
 controller automatically sets them as ready to be deleted. Thus, when the Operator is uninstalled
 you end up with the following situation:
-- Flow and AstarteVoyagerIngress CRDs are deleted, along with the custom resources depending on
+- Flow and AstarteDefaultIngress CRDs are deleted, along with the custom resources depending on
   said CRDs;
 - Astarte CRD is marked for deletion, but its removal is postponed until the moment in which the
   Astarte finalizer is executed.

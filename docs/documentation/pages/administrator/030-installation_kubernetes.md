@@ -61,8 +61,8 @@ $ helm uninstall astarte-operator -n kube-system
 So, what should you expect after uninstalling the Operator?
 
 After executing the `helm uninstall` command your Operator's deployment will be destroyed, along
-with the `AstarteDefaultIngress`, `AstarteVoyagerIngress` and `Flow` CRDs and resources (when they
-exist). Both the Astarte CRD and its instance will not be immediately destroyed as their deletion is
-allowed after the Astarte finalizer is executed. Please refer to the [Advanced Operations
+with the `AstarteDefaultIngress` and `Flow` CRDs and resources (when they exist). Both the Astarte
+CRD and its instance will not be immediately destroyed as their deletion is allowed after the
+Astarte finalizer is executed. Please refer to the [Advanced Operations
 section](095-advanced_operations.html#handling-astarte-when-uninstalling-the-operator) to learn how
 to handle your Astarte instance and how to restore its functionalities.

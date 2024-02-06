@@ -39,16 +39,6 @@ for avoiding confusing situations as outlined
 In the end, you won't need to create NGINX ingresses yourself: the Astarte Operator itself will take
 care of this task.
 
-## Voyager (deprecated)
-
-Until Astarte v1.0.0, the only supported Managed Ingress was the
-[Voyager](https://github.com/appscode/voyager) based `AstarteVoyagerIngress`. Starting from Dec the
-31st 2021, according to the [Voyager
-announcement](https://blog.byte.builders/post/voyager-v2021.09.15/), the support for Voyager will be
-dropped as stated [here](https://github.com/astarte-platform/astarte/issues/613). An alternative
-NGINX based Managed Ingress has been developed to replace the Voyager based solution (for reference,
-see the previous section).
-
 ## cert-manager
 
 Astarte requires [`cert-manager`](https://cert-manager.io/) to be installed in the cluster in its
