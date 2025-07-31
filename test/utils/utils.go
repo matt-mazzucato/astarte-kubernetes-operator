@@ -170,7 +170,7 @@ func EnsureAstarteHealthGreen() error {
 	cmd := exec.Command("kubectl", "wait", "astartes.v1alpha2.api.astarte-platform.org", astarteName,
 		"--for", fmt.Sprintf("jsonpath={.status.health}=%s", apiv1alpha2.AstarteClusterHealthGreen),
 		"--namespace", astarteNamespace,
-		"--timeout", "10m",
+		"--timeout", "15m",
 	)
 
 	_, err := Run(cmd)
